@@ -1,0 +1,33 @@
+# Simple Key Value pairs
+person:
+  name: Frank
+  age: 42
+  city: Port Harcourt
+  hobbies: #list
+    - reading
+    - googling
+  friends: # Multiple list
+    - name: friend1
+      age: 44
+    - name: friend2
+      age: 42
+    - name: friend3
+      age: 42
+--- # YAML Document Separator
+apiVersion: v1 # String
+kind: pod # String
+metadata: # Dictionary
+  name: myapp-pod
+  labels: # Dictionary
+    app: myapp
+    tier: frontend
+spec:
+  containers: # List
+    - name: myapp
+      image: stacksimplify/kubenginx:1.0.0
+      ports: # list 
+        - containerPort: 80
+          protocol: "TCP"
+        - containerPort: 81
+          protocol: "TCP"
+
